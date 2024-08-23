@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Rubik', sans-serif;
+    background: #111;
+}
+.grid-container{
+    display: grid;
+    height: 100dvh;
+    grid-template-rows: auto 1fr auto;
+    background-image: url(../img/rain2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+li{
+    list-style: none;
+}
+h1,h2{
+    font-weight: 400;
+}
+header > h2{
+    margin: 20px;
+}
+.weather-app{
+    min-height: 100dvh;
+    display: grid;
+    grid-template-rows: 30% 70%;
+    grid-template-columns: 100%;
+}
+.weather-app::before{
+    contain: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0 0 0 / 0.3);
+    z-index: 0;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    grid-template-rows: 1fr 1fr;
+    height: 100%;
+    grid-template-areas: 
+        "temperatura ciudad imagen"
+        "amanecer fecha atardecer";
+
+    & .current-temp{
+        align-self: center;
+        justify-self: center;
+        grid-area: temperatura;
+
+        & .temp{
+            font-size: 4rem;
+        }
+    }
+
+    & .current-city{
+        place-content: center;
+        grid-area: ciudad;
+        justify-self: center;
+        & .city-name{
+            text-align: center;
+        }
+        & .min-max{
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 4px;
+        }
+    }
+    & .current-weather{
+        grid-area: imagen;
+        place-self: center;
+        & .weather-img{
+            text-align: center;
+        }
+    }
+    & .city-time{
+        grid-area: fecha;
+        justify-self: center;
+
+        > h2{
+            text-align: center;
+            font-family: 'New Amsterdam';
+            font-size: 4rem;
+        }
+    }
+    & .sunrise{
+        grid-area: amanecer;
+        place-self: center;
+        & .sunrise-img{
+            text-align: center;
+        }
+        > p{
+            text-align: center;
+        }
+    }
+    & .sunset{
+        grid-area: atardecer;
+        place-self: center;
+        & .sunset-img{
+            text-align: center;
+        }
+        > p{
+            text-align: center;
+        }
+    }
+}
+.panel{
+    display: grid;
+    grid-template-rows: auto 1fr 1fr;
+    background: rgb(110 110 110 / .25);
+    box-shadow: 0 8px 32px 0 rgb(0 0 0 / 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgb(255, 255, 255 / 0.18);
+    
+    & .form{
+        padding: 10px;
+        
+        & .search{
+            background: none;
+            border: none;
+            border-bottom: 1px solid orangered;
+            width: 80%;
+            color: #fff;
+            font-size: 1.1em;
+            padding: 0.5rem;
+        }
+        & .search:focus{
+            outline: none;
+        }
+        & .submit{
+            border: none;
+            background: none;
+            color: orangered;
+            padding: 10px 0 0 20px;
+            outline: none;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+    }
+    & .details{
+        display: grid;
+        grid-template-rows: repeat(3 1fr);
+        padding: 10px 10px 0 10px;
+        > h3{
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        & .detail{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            > h5{
+                font-size: 1.2rem;
+            }
+            & .detail-info{
+                display: flex;
+                gap: 20px;
+                align-items: center;
+            }
+        }
+    }
+        
+    & .daysOfTheWeek{
+        display: grid;
+        grid-template-rows: repeat(7 1fr);
+        padding: 10px 10px 0 10px;
+        > h3{
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        & .days{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            > h5{
+                font-size: 1.2rem;
+            }
+
+            & .days-info{
+                display: flex;
+                gap: 15px;
+                align-items: center;
+            }
+        }
+    }
+}
+@media screen and (min-width: 650px){
+    .weather-app{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 100%;
+    }
+    .panel{
+        z-index: 10;
+        height: 100dvh;
+        border-top-left-radius: 15px;
+    }
+}
