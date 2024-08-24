@@ -6,12 +6,12 @@
     <title>API | Tiempo</title>
     <!-- FontAwesome Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <div class="grid-container">
         <header>
-            <h2>App del Clima</h2>
         </header>
         <main>
             <div class="weather-app">
@@ -22,8 +22,8 @@
                     <div class="current-city">
                         <h1 class="city-name">Santiago</h1>
                         <div class="min-max">
-                            <p>min: <span id="min">9&#176;C</span></p>
-                            <p>max: <span id="max">12&#176;C</span></p>
+                            <span class="currentMin">9&#176;C</span>
+                            <span class="currentMax">12&#176;C</span>
                         </div>
                     </div>   
                     <div class="current-weather">
@@ -43,20 +43,20 @@
                         <div class="sunrise-img">
                             <img src="assets/img/icons/amanecer.png" alt="icono-amanecer" width="60" height="60">
                         </div>
-                        <p>6:00 AM</p>
+                        <p class="currentAmanecer">6:00 AM</p>
                     </div>
                     <div class="sunset">
                         <p>Atardecer</p>
                         <div class="sunset-img">
                             <img src="assets/img/icons/atardecer.png" alt="icono-amanecer" width="60" height="60">
                         </div>
-                        <p>18:30 PM</p>
+                        <p class="currentAtardecer">18:30 PM</p>
                     </div>
                 </div>   
                 <div class="panel">
                     <div class="location">
                         <form id="locationInput" class="form">
-                            <input type="text" class="search" placeholder="Buscar ciudad">
+                            <input type="text" class="search" placeholder="Buscar ciudad" id="searchCity">
                             <button type="submit" class="submit"><i class="fas fa-search"></i></button>
                         </form>
                     </div>
@@ -87,69 +87,18 @@
                     </ul>
                     <div class="daysOfTheWeek">
                         <h3>Proximos días</h3>
-                        <div class="days">
-                            <h5>Lunes</h5>
-                            <div class="days-info">
-                                <img src="assets/img/icons/nublado2.png" alt="icono-tiempo" width="60" height="60">
-                                <p>Min: <span class="day-min">12&#176;C</span></p>
-                                <p>Max <span class="day-max">15&#176;C</span></p>
-                            </div>
+                        <div class="days-info">
+                            <!-- áca se agregaran las temperaturas y los días de la semana -->
                         </div>
-                        <div class="days">
-                            <h5>Martes</h5>
-                            <div class="days-info">
-                                <img src="assets/img/icons/nublado2.png" alt="icono-tiempo" width="60" height="60">
-                                <p>Min: <span class="day-min">12&#176;C</span></p>
-                                <p>Max <span class="day-max">15&#176;C</span></p>
-                            </div>
-                        </div>
-                        <div class="days">
-                            <h5>Miercoles</h5>
-                            <div class="days-info">
-                                <img src="assets/img/icons/nublado2.png" alt="icono-tiempo" width="60" height="60">
-                                <p>Min: <span class="day-min">12&#176;C</span></p>
-                                <p>Max <span class="day-max">15&#176;C</span></p>
-                            </div>
-                        </div>
-                        <div class="days">
-                            <h5>Jueves</h5>
-                            <div class="days-info">
-                                <img src="assets/img/icons/nublado2.png" alt="icono-tiempo" width="60" height="60">
-                                <p>Min: <span class="day-min">12&#176;C</span></p>
-                                <p>Max <span class="day-max">15&#176;C</span></p>
-                            </div>
-                        </div>
-                        <div class="days">
-                            <h5>Viernes</h5>
-                            <div class="days-info">
-                                <img src="assets/img/icons/nublado2.png" alt="icono-tiempo" width="60" height="60">
-                                <p>Min: <span class="day-min">12&#176;C</span></p>
-                                <p>Max <span class="day-max">15&#176;C</span></p>
-                            </div>
-                        </div>
-                        <div class="days">
-                            <h5>Sabado</h5>
-                            <div class="days-info">
-                                <img src="assets/img/icons/nublado2.png" alt="icono-tiempo" width="60" height="60">
-                                <p>Min: <span class="day-min">12&#176;C</span></p>
-                                <p>Max <span class="day-max">15&#176;C</span></p>
-                            </div>
-                        </div>
-                        <div class="days">
-                            <h5>Domingo</h5>
-                            <div class="days-info">
-                                <img src="assets/img/icons/nublado2.png" alt="icono-tiempo" width="60" height="60">
-                                <p>Min: <span class="day-min">12&#176;C</span></p>
-                                <p>Max <span class="day-max">15&#176;C</span></p>
-                            </div>
-                        </div>
-                        
                     </div>
                 </div>
             </div>
         </main>
         <footer></footer>
     </div>
-    <script src="assets/js/script.js"></script>
+    <!-- CUSTOM JS -->
+    <script type="module" src="assets/js/script.js"></script>
+    <!-- SWEET ALERT 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

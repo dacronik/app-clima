@@ -26,9 +26,7 @@ li{
 h1,h2{
     font-weight: 400;
 }
-header > h2{
-    margin: 20px;
-}
+
 .weather-app{
     min-height: 100dvh;
     display: grid;
