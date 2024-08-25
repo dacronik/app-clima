@@ -207,3 +207,24 @@ h1,h2{
         border-top-left-radius: 15px;
     }
 }
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Opcional: Añadir estilos adicionales para hacer que el texto sea más discreto */
+footer p {
+    margin: 0;
+}
