@@ -66,7 +66,7 @@ const otherDaysWatherData = (weatherData) => {
         <div class="days">
             <h5>${element.dayOfWeek}</h5>
             <div class="days-info">
-                <img src="assets/img/icons/${element.image}" alt="icono-tiempo" width="60" height="60">
+                <img src="assets/img/icons/${element.image}" alt="icono-tiempo" width="50" height="50">
                 <p>Min: <span class="day-min">${element.minTemp}&#176;C</span></p>
                 <p>Max <span class="day-max">${element.maxTemp}&#176;C</span></p>
             </div>
