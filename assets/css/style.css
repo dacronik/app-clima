@@ -221,7 +221,7 @@ footer {
 @media screen and (min-width: 665px){
     .weather-app{
         display: grid;
-        grid-template-columns: 50% 50%;
+        grid-template-columns: 60% 40%;
         grid-template-rows: 100%;
     }
     .panel{
