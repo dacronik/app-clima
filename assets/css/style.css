@@ -47,11 +47,21 @@ h1,h2{
 .container{
     display: grid;
     grid-template-columns: 30% 40% 30%;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 10% 1fr 1fr;
     height: 100%;
-    grid-template-areas: 
+    grid-template-areas:
+        "titulo titulo ." 
         "temperatura ciudad imagen"
         "amanecer fecha atardecer";
+    
+    & .title{
+        grid-area: titulo;
+        padding-left: 30px;
+        align-self: center;
+        > h4{
+            font-size: 1.5rem;
+        }
+    }
 
     & .current-temp{
         align-self: center;
@@ -59,7 +69,7 @@ h1,h2{
         grid-area: temperatura;
 
         & .temp{
-            font-size: 4rem;
+            font-size: 3rem;
         }
     }
 
@@ -88,10 +98,13 @@ h1,h2{
         grid-area: fecha;
         justify-self: center;
 
-        > h2{
+        & .time{
             text-align: center;
             font-family: 'New Amsterdam';
             font-size: 4rem;
+        }
+        & .date{
+            text-align: center;
         }
     }
     & .sunrise{
@@ -195,7 +208,17 @@ h1,h2{
         }
     }
 }
-@media screen and (min-width: 650px){
+footer {
+    padding: 20px;
+
+    & .footer-content {
+        text-align: center;
+    }
+}
+
+
+
+@media screen and (min-width: 665px){
     .weather-app{
         display: grid;
         grid-template-columns: 50% 50%;
@@ -208,23 +231,6 @@ h1,h2{
     }
 }
 
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    text-align:left;
-    padding: 10px 0;
-    font-size: 14px;
-}
 
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
 
-/* Opcional: Añadir estilos adicionales para hacer que el texto sea más discreto */
-footer p {
-    margin: 0;
-}
+

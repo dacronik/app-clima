@@ -1,25 +1,11 @@
 import { getCoordinates,getWeatherData } from "./apiCalls.js";
+import { days, weatherImages, convertUnixToTime, updateDateTime } from "./utils.js";
+
 
 const locationInput = document.getElementById('locationInput');
 const cityNameElement = document.querySelector('.city-name');
-const days = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
-const weatherImages = {
-'nubes dispersas':'clouds.png',
-'muy nuboso':'nublado2.png',
-'nubes':'nubes.png',
-'cielo claro':'clear.png',
-'lluvia ligera':'rain.png',
-'lluvia moderada':'rain.png',
-'rain and snow':'snow.png',
-'snow':'snow.png',
-'algo de nubes':'clouds.png',
-'nevada ligera':'snow.png'
-};
 
-const convertUnixToTime = (unixTimestamp) => {
-    const date = new Date(unixTimestamp * 1000); // Multiplicamos por 1000 para convertir de segundos a milisegundos
-    return date.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
-};
+
 //Función para mostrar los datos del tiempo del día de consulta
 const currentWatherData = (weatherData) =>{
     const temp = document.querySelector('.temp');
@@ -116,6 +102,8 @@ async function timeCity(city){
 }
 
 timeCity('Santiago');
+updateDateTime();
+setInterval(updateDateTime,60000);
 
 
 locationInput.addEventListener('submit', (event) => {
